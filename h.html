@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>منوی همبرگری راست چین</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .menu-toggle {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            width: 30px;
+            margin: 20px;
+        }
+        
+        .bar {
+            height: 4px;
+            width: 100%;
+            background-color: #333;
+            margin: 3px 0;
+            transition: all 0.3s ease;
+        }
+        
+        
+        .nav {
+            position: absolute;
+            right: -250px; /* پنهان کردن منو */
+            top: 0;
+            width: 200px;
+            height: 100%;
+            background-color: #f8f8f8;
+            transition: right 0.3s ease;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .nav ul li {
+            padding: 15px;
+        }
+        
+        .nav ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+        
+        .nav.active {
+            right: 0; /* نمایش منو */
+        }
+        
+        .menu-toggle.active .bar:nth-child(1) {
+            transform: translateY(10px) rotate(45deg);
+        }
+        
+        .menu-toggle.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .menu-toggle.active .bar:nth-child(3) {
+            transform: translateY(-10px) rotate(-45deg);
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="menu-toggle" id="menu-toggle">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    <nav class="nav" id="nav">
+        <ul>
+            <li><a href="#">خانه</a></li>
+            <li><a href="#">درباره ما</a></li>
+
+            <li><a href="#">خدمات</a></li>
+            <li><a href="#">تماس با ما</a></li>
+        </ul>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+</html>
